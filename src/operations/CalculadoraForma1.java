@@ -12,7 +12,6 @@ import polynomials.PolinomioForma1;
 public class CalculadoraForma1 {
 	private PolinomioForma1 polinomio1;
 	private PolinomioForma1 polinomio2;
-	private int [] vec;
 
 	public CalculadoraForma1(char[] polinomioC1, char[] polinomioC2) {
 		this.polinomio1 = new PolinomioForma1(polinomioC1);
@@ -118,7 +117,7 @@ public class CalculadoraForma1 {
                     expa = this.polinomio2.getData(0) + 1 - i + expt;
                     coea = this.polinomio2.getData(i) * coet;
                     posa = (int) (a[0] + 1 - expa);
-                    a[posa] = a[posa] - coea;
+                    a[posa] -= coea;
                 }
                 a = ajustar(a);
             }
@@ -144,30 +143,17 @@ public class CalculadoraForma1 {
         if (vec[1] == 0) {
             i = 1;
             while (i < vec[0] + 2 && vec[i] == 0) {
-                cont = cont + 1;
-                i = i + 1;
+                cont++;
+                i++;
             }
             for (int j = i; j < vec[0] + 2; j++) {
                 vec[j - cont] = vec[j];
             }
-            vec[0] = vec[0] - cont;
+            vec[0] -= cont;
         }
         return vec;
     }
 
-	private int getexpoente(int eDividendo, int eDivisor) {
-		short n = 1;
-		if(eDividendo == eDivisor) {
-			return 0;
-		}  else {
-			for(n = 1; n < eDividendo; n++) {
-				if(eDivisor + n == eDividendo) {
-					break;
-				}
-			}
-		}
-		return n;
-	}
 	public void cleanPolynomial() {
 		this.polinomio1 = null;
 		this.polinomio2 = null;

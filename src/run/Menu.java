@@ -192,7 +192,10 @@ public class Menu {
 								calcularF1.divide();
 								break;
 							case 2:
-								calcularF2.multiply();
+								JOptionPane.showMessageDialog(null, "Esta Opcion no está implementada");
+								break;
+							case 3:
+								JOptionPane.showMessageDialog(null, "Esta Opcion no está implementada");
 								break;
 							default:
 								System.out.println("Error");

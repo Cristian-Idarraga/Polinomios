@@ -1,5 +1,11 @@
 package operations;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import polynomials.PolinomioForma1;
 import polynomials.PolinomioForma2;
 
 public class CalculadoraForma2 {
@@ -79,6 +85,8 @@ public class CalculadoraForma2 {
 		vec = null;
 		poliMult = null;
 	}
+	
+	//divide
 
 	public void cleanPolynomial() {
 		this.polinomio1 = null;
